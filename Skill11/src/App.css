@@ -1,0 +1,231 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 32px 18px 48px;
+}
+
+.page-frame {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+  padding: 28px;
+}
+
+.hero-panel {
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  inset: auto -80px -120px auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.hero-panel h1,
+.page-header h2 {
+  margin: 0;
+  line-height: 1.05;
+  color: #0f172a;
+}
+
+.hero-panel h1 {
+  font-size: clamp(2.4rem, 4vw, 4.25rem);
+}
+
+.hero-copy {
+  max-width: 60ch;
+  margin: 14px 0 0;
+  color: #475569;
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.dashboard-grid,
+.list-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.dashboard-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 26px;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 170px;
+  padding: 20px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(15, 118, 110, 0.06), rgba(255, 255, 255, 0.95));
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #0f172a;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.09);
+  border-color: rgba(13, 148, 136, 0.28);
+}
+
+.nav-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.nav-card__description {
+  color: #475569;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.nav-card__action {
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.back-link {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(255, 255, 255, 0.78);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+button,
+select {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 14px;
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+button {
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(180deg, #0f766e, #115e59);
+  color: #fff;
+}
+
+button:hover {
+  filter: brightness(1.03);
+}
+
+.list-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.data-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.98));
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.data-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.data-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.data-card span {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.post-card {
+  position: relative;
+}
+
+.post-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.post-card p {
+  margin-top: 10px;
+}
+
+.center-state {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 18px 12px 28px;
+  }
+
+  .panel {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .page-header {
+    flex-direction: column;
+  }
+
+  .back-link {
+    width: fit-content;
+  }
+}
